@@ -1,6 +1,7 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 var keys = require('./keys.js')
+var Table = require('cli-table');
 
 var purchaseId = [];
 
@@ -26,8 +27,8 @@ function productTable(){
     if(error) throw error;
     console.log(error);
 
-    var table = new tables({
-      head:['Id', 'Product Name', 'Stock Quanity', 'Item Price']
+    var table = new Table({
+      head:['Id', 'Product Name', 'department', 'Item Price', 'Stock Quanity',]
     });
 
     for (i=0; i < results.length; i++){
